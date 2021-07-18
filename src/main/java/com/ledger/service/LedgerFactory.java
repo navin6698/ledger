@@ -7,6 +7,11 @@ import com.ledger.service.impl.PaymentServiceImpl;
 
 public class LedgerFactory {
 
+    /*
+       @param commandType : LOAN, PAYMENT, BALANCE
+       @Return LedgerService : Its an Interface which has implementations for each type of command,
+               returns null if command type is incorrect
+    */
     public static LedgerService getLedgerService(String commandType) {
         switch (commandType) {
             case Constants.LOAN:

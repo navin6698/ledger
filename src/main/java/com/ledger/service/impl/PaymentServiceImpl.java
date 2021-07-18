@@ -9,6 +9,12 @@ import com.ledger.util.LedgerUtil;
 import java.util.Map;
 
 public class PaymentServiceImpl implements LedgerService {
+
+    /*
+        @param data[] : PAYMENT MBI Harry 5000 10
+        @param loanAccounts : holds loan information
+        @returns void
+     */
     @Override
     public void processData(String[] data, Map<Integer, LoanAccount> loanAccounts) {
         Payment payment = getPayment(data);
@@ -18,6 +24,11 @@ public class PaymentServiceImpl implements LedgerService {
         updateLoanAccount(loanAccount , payment);
     }
 
+    /*
+        Creates Payment object
+        @param data[] : PAYMENT MBI Harry 5000 10
+        @returns Payment
+     */
     private Payment getPayment(String[] data) {
        return Payment.builder()
                .bankName(data[1])

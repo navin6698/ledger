@@ -10,6 +10,11 @@ import java.util.Map;
 
 public class BalanceServiceImpl implements LedgerService {
 
+    /*
+        @param data[] : BALANCE IDIDI Dale 3
+        @param loanAccounts : holds loan information
+        @returns void
+     */
     @Override
     public void processData(String[] data, Map<Integer, LoanAccount> loanAccounts) {
         Balance balance = getBalance(data);
@@ -19,6 +24,11 @@ public class BalanceServiceImpl implements LedgerService {
         printBalance(loanAccount , balance);
     }
 
+    /*
+        Creates balance object
+        @param data[] : BALANCE IDIDI Dale 3
+        @returns Balance
+     */
     private Balance getBalance(String[] data) {
         return Balance.builder()
                 .bankName(data[1])

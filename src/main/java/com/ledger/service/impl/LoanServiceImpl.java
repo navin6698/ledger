@@ -10,6 +10,12 @@ import java.util.Map;
 
 public class LoanServiceImpl implements LedgerService {
 
+    /*
+        @param data[] : LOAN IDIDI Dale 5000 1 6
+        @param loanAccounts : holds loan information
+        @returns void
+     */
+
     @Override
     public void processData(String[] data, Map<Integer, LoanAccount> loanAccounts) {
         Loan loan = getLoan(data);
@@ -18,6 +24,11 @@ public class LoanServiceImpl implements LedgerService {
         loanAccounts.put(key,loanAccount);
     }
 
+    /*
+        Creates loan object
+        @param data[] : LOAN IDIDI Dale 5000 1 6
+        @returns Loan
+     */
     private Loan getLoan(String[] data) {
         return Loan.builder()
                 .bankName(data[1])
