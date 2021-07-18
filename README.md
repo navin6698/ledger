@@ -16,5 +16,7 @@ Payment - Payment command input.
 
 LedgerUtil - Utility class used across application.
 
+Note : Changed main class name and jar name to Geektrust since this was being expected when submitting code.
+
 Assumptions:
 Bank and borrower name is unique, since this will be used to generate hashcode which is used as unique key across application
